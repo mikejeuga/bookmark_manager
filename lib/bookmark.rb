@@ -8,7 +8,8 @@ class Bookmark
   end
 
   def self.all
-    conn = PG.connect(dbname: "bookmark_manager")
+    ENV["RACK_ENV"] == "test" ? db = "bookmark_manager_test" : db = "bookmark_manager"
+    conn = PG.connect(dbname: db)
     conn.exec("SELECT * FROM bookmarks").map {
       |bookmark|
       bookmark["url"]
