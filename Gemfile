@@ -2,13 +2,15 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem "sinatra"
+gem "sinatra", group: :test
 gem "sinatra-contrib"
-gem "rspec"
+gem "rspec", group: :test
 gem "capybara"
 gem "launchy"
-
+gem "rubocop"
+gem "simplecov"
+gem "pg"
