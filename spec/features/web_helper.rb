@@ -2,7 +2,7 @@ require "pg"
 require "./lib/bookmark.rb"
 
 def add_test_bookmarks
-  Bookmark.create("http://www.makersacademy.com")
-  Bookmark.create("http://askjeeves.com")
-  Bookmark.create("http://www.google.com")
+  Bookmark.create("Makers", "http://www.makersacademy.com")
+  Bookmark.create("Askjeeves", "http://askjeeves.com")
+  Bookmark.create("Google", "http://www.google.com")
 end

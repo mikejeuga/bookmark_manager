@@ -1,10 +1,11 @@
 require "pg"
 
 class Bookmark
-  attr_reader :name
+  attr_reader :title, :url
 
-  def initialize(name = "default name")
-    @name = name
+  def initialize(title = "default tilte", url = "default url")
+    @title = title
+    @url = url
   end
 
   def self.all
@@ -12,13 +13,13 @@ class Bookmark
     conn = PG.connect(dbname: db)
     conn.exec("SELECT * FROM bookmarks").map {
       |bookmark|
-      bookmark["url"]
+      Bookmark.new(bookmark["title"], bookmark["url"])
     }
   end
 
-  def self.create(url)
+  def self.create(title, url)
     ENV["RACK_ENV"] == "test" ? db = "bookmark_manager_test" : db = "bookmark_manager"
     connection = PG.connect(dbname: db)
-    connection.exec("INSERT INTO bookmarks(url) VALUES('#{url}')")
+    connection.exec("INSERT INTO bookmarks(title, url) VALUES('#{title}', '#{url}')")
   end
 end
