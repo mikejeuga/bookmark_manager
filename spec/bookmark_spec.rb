@@ -15,4 +15,11 @@ describe Bookmark do
       expect(Bookmark.all).to include("http://www.makersacademy.com", "http://askjeeves.com", "http://www.google.com")
     end
   end
+
+  describe "#create" do
+    it "should create a new bookmark into the bookmark manager" do
+      url = "https://github.com/"
+      expect { Bookmark.create(url) }.to change { Bookmark.all.length }.by 1
+    end
+  end
 end
