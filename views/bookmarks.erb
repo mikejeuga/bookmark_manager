@@ -11,8 +11,8 @@
   <h2>Here are your Bookmarks</h2>
   <% @bookmarks.map do |bookmark| %>
   <li>
-  <a href="<%= bookmark.url %>">
-  <%= bookmark.title %> - <%= bookmark.url %>
+ <%= bookmark.title %> - <a href="<%= bookmark.url %>">
+  <%= bookmark.url %>
   </a>
   </li>
   <% end %>
