@@ -10,6 +10,13 @@
 <div class='bookmarks-container'>
   <h2>Here are your Bookmarks</h2>
   <%= @bookmarks.join("<br>") %>
-</div>
+  <%= @url %>
+</div> <br>
+
+  <form action="/create" method="post">
+        <input type="text" name="url">
+        <input type="submit" value="Create">
+    </form>
+
 </body>
 </html>
