@@ -9,8 +9,15 @@
 <body>
 <div class='bookmarks-container'>
   <h2>Here are your Bookmarks</h2>
-  <%= @bookmarks.map { |bookmark| "#{bookmark.title} - #{bookmark.url}" }.join("<br>") %>
-</div> <br>
+  <% @bookmarks.map do |bookmark| %>
+  <li>
+  <a href="<%= bookmark.url %>">
+  <%= bookmark.title %> - <%= bookmark.url %>
+  </a>
+  </li>
+  <% end %>
+</div>
+  <br>
 
   <form action="/create" method="post">
         <input type="text" name="title">
