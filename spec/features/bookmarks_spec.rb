@@ -13,5 +13,16 @@ feature "testing bookmarks page" do
     expect(page).to have_content("Makers - http://www.makersacademy.com")
     expect(page).to have_content("Askjeeves - http://askjeeves.com")
     expect(page).to have_content("Google - http://www.google.com")
+    expect(page).to have_link("http://www.google.com")
+  end
+end
+
+feature "deleting bookmarks" do
+  scenario "should see a button to delete bookmarks" do
+    visit("/bookmarks")
+    fill_in("title", with: "Google")
+    click_button("Delete")
+    expect(page).not_to have_content("Google - http://www.google.com")
+    expect(page).not_to have_link("http://www.google.com")
   end
 end

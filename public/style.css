@@ -1,0 +1,82 @@
+* { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    
+}
+body {
+    height: 100%;
+    background-color: #206a5d;
+    color: #e84545;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+.app-container, .bookmarks-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 100vh;
+    gap: 1%;
+    
+}
+
+.bookm-title {
+    font-weight: 1900;
+    font-size: 55px;
+    animation: blink 10s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes blink {
+    0% {color: #32e0c4;}
+    25% {color: #0d7377;}
+    50% {color: #709fb0;}
+    75% {color: #a0c1b8;}
+    100% {color: #2ec1ac;}
+}
+
+.create-btn, .home-btn, .delete-btn {
+    background-color: #fe7171;
+    color: #00334e;
+    font-size: 24px;
+    padding: 20px 25px;
+    margin: auto;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.create-btn:hover, .home-btn:hover, .delete-btn:hover {
+    cursor: pointer;
+    color: #d6e0f0;
+}
+
+.home-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entry-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bookmark-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
