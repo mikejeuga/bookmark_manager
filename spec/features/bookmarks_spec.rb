@@ -19,10 +19,10 @@ end
 
 feature "deleting bookmarks" do
   scenario "should see a button to delete bookmarks" do
+    bookmark = Bookmark.create(title: "JJ", url: "https://www.jj.com/")
     visit("/bookmarks")
-    fill_in("title", with: "Google")
     click_button("Delete")
-    expect(page).not_to have_content("Google - http://www.google.com")
-    expect(page).not_to have_link("http://www.google.com")
+    expect(page).to have_current_path("/bookmarks")
+    expect(page).not_to have_content "#{bookmark.title}"
   end
 end

@@ -6,7 +6,7 @@ describe Bookmark do
 
   context "#initialize" do
     it "has a name" do
-      b = Bookmark.new(54, "Google", "http://www.google.com")
+      b = Bookmark.new(id: 54, title: "Google", url: "http://www.google.com")
       expect(b.title).to eq "Google"
     end
   end
@@ -22,14 +22,14 @@ describe Bookmark do
     it "should create a new bookmark into the bookmark manager" do
       title = "Github"
       url = "https://github.com/"
-      expect { Bookmark.create(title, url) }.to change { Bookmark.all.length }.by 1
+      expect { Bookmark.create(title: title, url: url) }.to change { Bookmark.all.length }.by 1
     end
   end
 
   context "#delete" do
     it "should delete the bookmark chosen" do
-      Bookmark.create(last.title, last.url)
-      Bookmark.delete(last.id)
+      Bookmark.create(title: last.title, url: last.url)
+      Bookmark.delete(id: last.id)
       expect(Bookmark.all).not_to include(last)
     end
   end

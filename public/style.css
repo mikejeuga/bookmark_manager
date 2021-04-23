@@ -14,7 +14,7 @@ html {
 }
 body {
     height: 100%;
-    background-color: #206a5d;
+    background-color: #30475e;
     color: #e84545;
     font-family: 'Bebas Neue', cursive;
 
@@ -30,7 +30,7 @@ body {
 
 .bookm-title {
     font-weight: 1900;
-    font-size: 55px;
+    font-size: 70px;
     animation: blink 10s infinite;
     display: flex;
     justify-content: center;
@@ -38,14 +38,14 @@ body {
 }
 
 @keyframes blink {
-    0% {color: #32e0c4;}
+    0% {color: #fed049;}
     25% {color: #0d7377;}
-    50% {color: #709fb0;}
-    75% {color: #a0c1b8;}
-    100% {color: #2ec1ac;}
+    50% {color: #d35d6e;}
+    75% {color: #e8e8e8;}
+    100% {color: #f3eac2;}
 }
 
-.create-btn, .home-btn, .delete-btn {
+.home-btn {
     background-color: #fe7171;
     color: #00334e;
     font-size: 24px;
@@ -56,7 +56,29 @@ body {
     font-family: 'Bebas Neue', cursive;
 }
 
-.create-btn:hover, .home-btn:hover, .delete-btn:hover {
+.create-btn {
+    background-color: #fe7171;
+    color: #00334e;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin: auto;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.delete-btn {
+    background-color: #fea82f;
+    color: #00334e;
+    font-size: 14px;
+    padding: 10px 15px;
+    margin: auto;
+    border-radius: 12px;
+    border: none;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.create-btn:hover, .home-btn:hover {
     cursor: pointer;
     color: #d6e0f0;
 }
@@ -67,16 +89,41 @@ body {
     align-items: center;
 }
 
-.entry-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+.delete-btn:hover {
+    cursor: pointer;
+    color: #f0f0d6;
+    background-color: #ce1212;
+}
+
+
+
+.bookmark-list > li {
+    font-size: 24px;
+    display: inline-block;
+}
+
+.bookmark-list > h2 {
+    font-size: 40px;
+}
+
+.bookmarks-container {
+    margin: 30px;
+    padding: auto;
+
 }
 
 .bookmark-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 }
 
+.entry-form {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}

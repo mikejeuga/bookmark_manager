@@ -21,20 +21,21 @@
   <%= bookmark.url %>
   </a>
   </li>
+
+  <form class="delete-entry" action="/bookmarks/<%= bookmark.id %>" method="post">
+     <input type="hidden" name="_method" value="DELETE">
+     <input class="delete-btn" id=delete-<%= bookmark.id %> type="submit" value="Delete">
+    </form>
   <% end %>
-  </div>
+  </div><br>
 
 
-  <form class="entry-form" action="/create" method="post">
+  <form class="entry-form" action="/bookmarks/create" method="post">
         <input type="text" name="title" required>
         <input type="text" name="url" required>
         <input class="create-btn" type="submit" value="Create">
     </form>
 
-    <form class="delete-entry" action="/delete" method="post">
-     <input type="text" name="id" required>
-     <input class="delete-btn" type="submit" value="Delete">
-    </form>
 </div>
 </body>
 </html>
