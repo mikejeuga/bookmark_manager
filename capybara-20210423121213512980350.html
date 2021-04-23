@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<%= url("/style.css") %>" type="text/css"/>
+    <link rel="stylesheet" href="http://www.example.com/style.css" type="text/css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Document</title>
@@ -15,22 +15,7 @@
   <h1 class="bookm-title">Bookmark Manager</h1>
   <div class="bookmark-list">
   <h2>Here are your Bookmarks</h2>
-  <% @bookmarks.map do |bookmark| %>
-  <li>
- <%= bookmark.title %> - <a href="<%= bookmark.url %>">
-  <%= bookmark.url %>
-  </a>
-  </li>
-
-  <form action="/bookmarks/<%= bookmark.id %>/edit" method="get">
-        <input type="submit" value="Edit"/>
-  </form>
-
-  <form class="delete-entry" action="/bookmarks/<%= bookmark.id %>" method="post">
-     <input type="hidden" name="_method" value="DELETE">
-     <input class="delete-btn" id=delete-<%= bookmark.id %> type="submit" value="Delete">
-  </form>
-  <% end %>
+  
   </div><br>
 
 

@@ -33,4 +33,19 @@ describe Bookmark do
       expect(Bookmark.all).not_to include(last)
     end
   end
+
+  context "#get" do
+    it "shoud give a bookmark back to the caller" do
+      mm_book = Bookmark.create(title: "MM", url: "www.mm.com")
+      expect(Bookmark.get(id: mm_book.id).title).to eq("MM")
+    end
+  end
+
+  context "#update" do
+    it "should update the data in the db and the page." do
+      mm_book = Bookmark.create(title: "MM", url: "www.mm.com")
+      updated = Bookmark.update(id: mm_book.id, title: "FF", url: "www.ff.com")
+      expect(Bookmark.get(id: updated.id).title).to eq("FF")
+    end
+  end
 end

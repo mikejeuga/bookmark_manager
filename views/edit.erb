@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="edit-container">
+<form action="/bookmarks/<%= @bookmark.id %>" method="post">
+<label >Title</label>
+<input type="text" name="title" id="title" value="<%= @bookmark.title %>">
+<label >URL</label>
+<input type="text" name="url" id="url" value="<%= @bookmark.url %>">
+<input type="hidden" name="_method" value="patch">
+<input type="submit" value="Update">
+</form>
+</div>
+    
+</body>
+</html>

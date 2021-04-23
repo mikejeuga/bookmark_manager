@@ -26,3 +26,17 @@ feature "deleting bookmarks" do
     expect(page).not_to have_content "#{bookmark.title}"
   end
 end
+
+feature "The Edit button" do
+  scenario "should allow the user to update a bookmark" do
+    bookmark = Bookmark.create(title: "JJ", url: "https://www.jj.com/")
+    visit("/bookmarks")
+    click_button("Edit")
+    expect(page).to have_current_path("/bookmarks/#{bookmark.id}/edit")
+    fill_in("title", with: "MM")
+    fill_in("url", with: "www.mm.com")
+    click_button("Update")
+    expect(current_path).to eq("/bookmarks")
+    expect(page).to have_content "www.mm.com"
+  end
+end

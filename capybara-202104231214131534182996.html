@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://www.example.com/style.css" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+<div class='bookmarks-container'>
+  <h1 class="bookm-title">Bookmark Manager</h1>
+  <div class="bookmark-list">
+  <h2>Here are your Bookmarks</h2>
+  
+  <li>
+ Makers - <a href="http://www.makersacademy.com">
+  http://www.makersacademy.com
+  </a>
+  </li>
+
+  <form action="/bookmarks/1653/edit" method="get">
+        <input type="submit" value="Edit"/>
+  </form>
+
+  <form class="delete-entry" action="/bookmarks/1653" method="post">
+     <input type="hidden" name="_method" value="DELETE">
+     <input class="delete-btn" id=delete-1653 type="submit" value="Delete">
+  </form>
+  
+  <li>
+ Askjeeves - <a href="http://askjeeves.com">
+  http://askjeeves.com
+  </a>
+  </li>
+
+  <form action="/bookmarks/1654/edit" method="get">
+        <input type="submit" value="Edit"/>
+  </form>
+
+  <form class="delete-entry" action="/bookmarks/1654" method="post">
+     <input type="hidden" name="_method" value="DELETE">
+     <input class="delete-btn" id=delete-1654 type="submit" value="Delete">
+  </form>
+  
+  <li>
+ Google - <a href="http://www.google.com">
+  http://www.google.com
+  </a>
+  </li>
+
+  <form action="/bookmarks/1655/edit" method="get">
+        <input type="submit" value="Edit"/>
+  </form>
+
+  <form class="delete-entry" action="/bookmarks/1655" method="post">
+     <input type="hidden" name="_method" value="DELETE">
+     <input class="delete-btn" id=delete-1655 type="submit" value="Delete">
+  </form>
+  
+  </div><br>
+
+
+  <form class="entry-form" action="/bookmarks/create" method="post">
+        <input type="text" name="title" required>
+        <input type="text" name="url" required>
+        <input class="create-btn" type="submit" value="Create">
+    </form>
+
+</div>
+</body>
+</html>
